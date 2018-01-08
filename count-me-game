@@ -1,0 +1,13 @@
+function CountMe()
+{
+    var tag="div";
+    var attributes = { class: "container", id: "my-form", name:'div-name'}
+
+    var tag_num =document.getElementsByTagName(tag).length;
+    var name_num = document.getElementsByName(attributes.name).length
+    var class_num=document.getElementsByClassName(attributes.class).length
+    var id_exist =(document.getElementById(attributes.id)!=null)
+    
+    var obj_counter ={all:tag_num,class:class_num,id:id_exist,name:name_num}
+
+}   

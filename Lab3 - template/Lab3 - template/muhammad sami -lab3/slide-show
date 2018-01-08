@@ -1,0 +1,51 @@
+function slidego() {
+    var interval;
+    var imgs = ['img/Lemon-juice.png', "img/orange-juice.png", "img/green.png", "img/orange.png"]
+    var imgsrc   = document.getElementsByTagName('img')
+    var buttons=document.getElementById('mydiv').children;
+    buttons[0].addEventListener('click',prev);
+    buttons[1].addEventListener('click', play);
+    buttons[2].addEventListener('click', stop);
+    buttons[3].addEventListener('click', nex);
+    var flag = 0;
+
+    function ReadyGo() {
+        imgsrc[0].src = imgs[flag];
+
+        if (flag < imgs.length-1) {
+            flag++;
+        }
+        else { flag = 0 }
+
+
+    }
+
+    function play (){
+        interval = setInterval(ReadyGo, 900);   
+    }
+    
+
+
+    function stop() {
+        clearInterval(interval);    
+    }
+    function prev (){
+
+        if (flag >0) {
+            flag--;
+        }
+        else { flag =imgs.length-1 }
+        imgsrc[0].src = imgs[flag];
+    }
+    function nex(){
+
+        if (flag <imgs.length-1) {
+            flag++;
+        }
+        else { flag = 0}
+        imgsrc[0].src = imgs[flag];
+    }
+
+
+}
+slidego();

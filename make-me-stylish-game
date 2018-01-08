@@ -1,0 +1,15 @@
+function MakeMeStylish(mytag ,mystyle) {
+
+	var chosen_tag = document.getElementsByTagName(mytag)
+
+ for (var i = chosen_tag.length - 1; i >= 0; i--) {
+
+   chosen_tag[i].style.background=mystyle.background;
+   chosen_tag[i].style.color=mystyle.color;
+ }
+
+ 
+ 
+}
+
+MakeMeStylish('div',{color:"red",background:"blue"});

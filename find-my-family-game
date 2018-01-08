@@ -1,0 +1,34 @@
+function FindMyFamily() {
+
+    var lost=document.getElementsByTagName('div')
+    var  obj=[];
+
+    for (var i =lost.length - 1; i >= 0; i--)
+    {
+        var parent=lost[i].parentNode;
+        var childs=lost[i].children;
+        var siblings=lost[i].parentNode.children;
+        obj[i]={p:parent,c:childs,s:siblings};
+    }
+
+
+      /* for (var i =lost.length - 1; i >= 0; i--)
+        {
+        for (var j = obj[i].s.length -1 ; j >= 0; j--)
+        {
+            if ( lost[i]==obj[i].s[j])
+
+            {
+                obj[i].s[j].splice(j,1);
+            }
+
+        }
+        }*/
+
+    for(var i=0;i<obj.length;i++)
+    {
+        console.log(obj[i]);
+    }
+}
+FindMyFamily();
+/**/

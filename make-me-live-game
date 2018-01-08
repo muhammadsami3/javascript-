@@ -1,0 +1,16 @@
+function MakeMeLive () {
+
+var  pargraphs=[];
+
+for (var i = 4; i >= 0; i--) 
+{
+ pargraphs[i]=document.body.children[i].textContent;
+ document.body.children[i].innerHTML='<a href=http://'+pargraphs[i]+'>'+pargraphs[i]+'</a>';
+
+}
+
+
+
+
+ 
+}

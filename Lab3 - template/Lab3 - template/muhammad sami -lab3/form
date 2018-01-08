@@ -1,0 +1,92 @@
+function form() {
+
+    var sub=document.getElementById("saveForm");
+    var footer = document.getElementById("footer");
+    sub.addEventListener('click',check_this)
+    function check_this(event) {
+        footer.textContent  = "";
+        var name = document.getElementById("element_1");
+       
+        
+        if (name.value.length<1)
+        {
+            
+            name.setAttribute('style', "border-color:#ff3300") ;
+            var error = document.getElementById('error')
+            error.innerHTML +=' <ul >name</ul>'
+         footer.textContent+="[name !]"
+         event.preventDefault();
+        }
+        else
+        {
+            document.getElementById("element_1").setAttribute('style', "border:2px solid #00ff00");
+        }
+
+        var email = document.getElementById('element_2').value; 
+        var exp = /(\w(=?@)\w+\.{1}[a-zA-Z]{2,})/i
+        
+        if (exp.test(email)==false)
+        {
+            document.getElementById('element_2').setAttribute('style', "border-color:#ff3300") ;
+         footer.textContent+="[email !]"
+         event.preventDefault();
+        }
+        else
+        {
+            document.getElementById("element_2").setAttribute('style', "border:2px solid #00ff00");  ;
+        }
+
+        var password = document.getElementById("element_3").value;
+        
+        if(password.length<8)
+        {
+            document.getElementById("element_3").setAttribute('style', "border-color:#ff3300");
+            footer.textContent += "[passord>8 char] ";
+            event.preventDefault();
+        }
+        else
+        {
+            document.getElementById("element_3").setAttribute('style', "border:2px solid #00ff00");   
+        }
+        var radio_btn = document.getElementsByClassName("element radio");
+
+        if((radio_btn[0].checked==false )&&(radio_btn[1].checked==false))
+        {
+           // document.getElementById("li_4").setAttribute('style', "border-color:red");
+            footer.textContent += "[male/female]";
+            event.preventDefault();
+        }
+
+        var check_box = document.getElementsByClassName("element checkbox")
+        var count=0;
+        for(var i=0;i<check_box.length;i++)
+        {
+            if(check_box[i].checked==true)
+            {
+                count++;
+            }
+        }
+        if(count<=1)
+        {
+           
+            footer.textContent += "[sports>2] ";
+            event.preventDefault();
+        }
+
+        var country = document.getElementById('element_6').value
+      
+        if(country =="")
+        {
+            footer.textContent += "[country !!] ";
+            event.preventDefault();
+        }
+
+        
+
+
+
+        
+    }
+    
+}
+form();
